@@ -1,0 +1,22 @@
+<changeSet id="003" author="yasir">
+    <createTable tableName="services">
+        <column name="id" type="BIGSERIAL">
+            <constraints primaryKey="true"/>
+        </column>
+
+        <column name="organizer_id" type="BIGINT"/>
+        <column name="name" type="VARCHAR(150)"/>
+        <column name="description" type="TEXT"/>
+        <column name="price" type="DECIMAL(10,2)"/>
+        <column name="duration_minutes" type="INT"/>
+        <column name="is_active" type="BOOLEAN" defaultValueBoolean="true"/>
+
+        <column name="created_at" type="TIMESTAMP"
+                defaultValueComputed="CURRENT_TIMESTAMP"/>
+    </createTable>
+
+    <addForeignKeyConstraint baseTableName="services"
+                             baseColumnNames="organizer_id"
+                             referencedTableName="organizers"
+                             referencedColumnNames="id"/>
+</changeSet>

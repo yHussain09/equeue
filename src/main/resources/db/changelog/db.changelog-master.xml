@@ -1,0 +1,18 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
+        http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <include file="001-organizer.xml"/>
+    <include file="002-events.xml"/>
+    <include file="003-services.xml"/>
+    <include file="004-event-services.xml"/>
+    <include file="005-appointments.xml"/>
+    <include file="006-appointment-services.xml"/>
+    <include file="007-queues.xml"/>
+    <include file="008-queue-entries.xml"/>
+    <include file="009-payments.xml"/>
+
+</databaseChangeLog>

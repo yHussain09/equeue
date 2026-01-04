@@ -1,0 +1,26 @@
+<changeSet id="007" author="yasir">
+    <createTable tableName="queues">
+        <column name="id" type="BIGSERIAL">
+            <constraints primaryKey="true"/>
+        </column>
+
+        <column name="organizer_id" type="BIGINT"/>
+        <column name="event_id" type="BIGINT"/>
+
+        <column name="name" type="VARCHAR(150)"/>
+        <column name="average_elapsed_time_minutes" type="INT"/>
+
+        <column name="created_at" type="TIMESTAMP"
+                defaultValueComputed="CURRENT_TIMESTAMP"/>
+    </createTable>
+
+    <addForeignKeyConstraint baseTableName="queues"
+                             baseColumnNames="organizer_id"
+                             referencedTableName="organizers"
+                             referencedColumnNames="id"/>
+
+    <addForeignKeyConstraint baseTableName="queues"
+                             baseColumnNames="event_id"
+                             referencedTableName="events"
+                             referencedColumnNames="id"/>
+</changeSet>

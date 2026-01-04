@@ -1,0 +1,35 @@
+<changeSet id="005" author="yasir">
+    <createTable tableName="appointments">
+        <column name="id" type="BIGSERIAL">
+            <constraints primaryKey="true"/>
+        </column>
+
+        <column name="organizer_id" type="BIGINT"/>
+        <column name="event_id" type="BIGINT"/>
+
+        <column name="person_name" type="VARCHAR(150)"/>
+        <column name="contact_phone" type="VARCHAR(30)"/>
+
+        <column name="appointment_date" type="DATE"/>
+        <column name="slot_start_time" type="TIME"/>
+        <column name="slot_end_time" type="TIME"/>
+
+        <column name="status" type="VARCHAR(30)"/>
+
+        <column name="total_amount" type="DECIMAL(10,2)"/>
+        <column name="total_duration_minutes" type="INT"/>
+
+        <column name="created_at" type="TIMESTAMP"
+                defaultValueComputed="CURRENT_TIMESTAMP"/>
+    </createTable>
+
+    <addForeignKeyConstraint baseTableName="appointments"
+                             baseColumnNames="organizer_id"
+                             referencedTableName="organizers"
+                             referencedColumnNames="id"/>
+
+    <addForeignKeyConstraint baseTableName="appointments"
+                             baseColumnNames="event_id"
+                             referencedTableName="events"
+                             referencedColumnNames="id"/>
+</changeSet>
