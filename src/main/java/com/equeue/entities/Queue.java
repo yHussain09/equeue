@@ -1,5 +1,6 @@
 package com.equeue.entities;
 
+import com.equeue.base.BaseTenantEntity;
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -7,15 +8,11 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "queues")
-public class Queue {
+public class Queue extends BaseTenantEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "organizer_id")
-    private Organizer organizer;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "event_id")
@@ -24,7 +21,5 @@ public class Queue {
     private String name;
     private Integer averageElapsedTimeMinutes;
 
-    @CreationTimestamp
-    private LocalDateTime createdAt;
 }
 

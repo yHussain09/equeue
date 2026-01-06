@@ -1,12 +1,13 @@
 package com.equeue.entities;
 
+import com.equeue.base.BaseTenantEntity;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 
 @Entity
 @Table(name = "appointment_services")
-public class AppointmentService {
+public class AppointmentService extends BaseTenantEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

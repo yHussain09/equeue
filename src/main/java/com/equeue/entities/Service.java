@@ -1,5 +1,6 @@
 package com.equeue.entities;
 
+import com.equeue.base.BaseTenantEntity;
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -8,7 +9,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "services")
-public class Service {
+public class Service extends BaseTenantEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

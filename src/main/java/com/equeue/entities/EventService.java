@@ -1,5 +1,6 @@
 package com.equeue.entities;
 
+import com.equeue.base.BaseTenantEntity;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
@@ -9,7 +10,7 @@ import java.math.BigDecimal;
         name = "event_services",
         uniqueConstraints = @UniqueConstraint(columnNames = {"event_id", "service_id"})
 )
-public class EventService {
+public class EventService extends BaseTenantEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
