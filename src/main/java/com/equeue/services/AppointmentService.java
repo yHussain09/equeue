@@ -79,7 +79,7 @@ public class AppointmentService {
         appointmentRepository.save(appointment);
     }
 
-    @Transactional
+    /*@Transactional
     public void bookFlow(...) {
 
         Appointment appt = appointmentService.createAppointment(...);
@@ -92,5 +92,5 @@ public class AppointmentService {
         queueService.addToQueue(appt, organizerId, eventId);
 
         paymentService.createPayment(appt.getId(), organizer, PaymentMethod.CASH);
-    }
+    }*/
 }
