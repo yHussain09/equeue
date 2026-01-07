@@ -1,5 +1,21 @@
 package com.equeue.controllers;
 
+import com.equeue.dto.request.ServiceCreateRequest;
+import com.equeue.dto.response.ServiceResponse;
+import com.equeue.entities.ServiceCatalog;
+import com.equeue.services.EventService;
+import com.equeue.services.ServiceCatalogService;
+import com.sun.security.auth.UserPrincipal;
+import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
 @RestController
 @RequestMapping("/admin")
 @RequiredArgsConstructor
@@ -21,8 +37,8 @@ public class AdminController {
         UserPrincipal admin =
                 (UserPrincipal) authentication.getPrincipal();
 
-        ServiceEntity service =
-                serviceCatalogService.create(
+        ServiceCatalog service =
+                serviceCatalogService.createService(
                         admin.getOrganizerId(),
                         request
                 );

@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 @Entity
-@Table(name = "events")
+@Table(name = "events") // Event (hierarchical) like Clinic -> Doctor, Branch -> Counter, Session
 public class Event extends BaseTenantEntity {
 
     @Id
@@ -37,8 +37,5 @@ public class Event extends BaseTenantEntity {
 
     private LocalTime startTime;
     private LocalTime endTime;
-
-    @CreationTimestamp
-    private LocalDateTime createdAt;
 }
 

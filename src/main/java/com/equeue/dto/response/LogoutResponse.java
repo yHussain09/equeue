@@ -1,3 +1,12 @@
 package com.equeue.dto.response;
 
-public record LogoutResponse(String message) {}
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@Getter
+@AllArgsConstructor
+public class LogoutResponse {
+
+    private String message;
+}
+

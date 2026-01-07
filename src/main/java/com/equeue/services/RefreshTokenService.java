@@ -1,7 +1,8 @@
 package com.equeue.services;
 
-import com.equeue.entities.RefreshTokenEntity;
+import com.equeue.entities.RefreshToken;
 import com.equeue.repositories.RefreshTokenRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -10,14 +11,15 @@ import java.time.temporal.ChronoUnit;
 import java.util.UUID;
 
 @Service
+@RequiredArgsConstructor
 @Transactional
 public class RefreshTokenService {
 
     private final RefreshTokenRepository repository;
 
-    public RefreshTokenEntity create(Long userId, Long organizerId) {
+    public RefreshToken create(Long userId, Long organizerId) {
 
-        RefreshTokenEntity token = new RefreshTokenEntity();
+        RefreshToken token = new RefreshToken();
         token.setUserId(userId);
         token.setOrganizerId(organizerId);
         token.setToken(UUID.randomUUID().toString());
@@ -26,9 +28,9 @@ public class RefreshTokenService {
         return repository.save(token);
     }
 
-    public RefreshTokenEntity validate(String token) {
+    public RefreshToken validate(String token) {
 
-        RefreshTokenEntity refreshToken = repository
+        RefreshToken refreshToken = repository
                 .findByTokenAndRevokedFalse(token)
                 .orElseThrow(() ->
                         new RuntimeException("Invalid refresh token"));

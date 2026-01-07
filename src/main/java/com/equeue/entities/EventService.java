@@ -22,7 +22,7 @@ public class EventService extends BaseTenantEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "service_id")
-    private Service service;
+    private ServiceCatalog serviceCatalog;
 
     private BigDecimal priceOverride;
     private Integer durationOverrideMinutes;

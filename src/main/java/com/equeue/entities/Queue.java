@@ -7,7 +7,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "queues")
+@Table(name = "queues") // A queue for a specific event
 public class Queue extends BaseTenantEntity {
 
     @Id

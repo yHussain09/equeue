@@ -1,7 +1,14 @@
 package com.equeue.dto.request;
 
 import jakarta.validation.constraints.NotBlank;
+import lombok.Getter;
+import lombok.Setter;
 
-public record RefreshRequest(
-        @NotBlank String refreshToken
-){}
+@Getter
+@Setter
+public class RefreshRequest {
+
+    @NotBlank
+    private String refreshToken;
+}
+

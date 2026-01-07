@@ -2,14 +2,16 @@ package com.equeue.entities;
 
 import com.equeue.base.BaseTenantEntity;
 import jakarta.persistence.*;
-import org.hibernate.annotations.CreationTimestamp;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "services")
-public class Service extends BaseTenantEntity {
+public class ServiceCatalog extends BaseTenantEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,6 +31,6 @@ public class Service extends BaseTenantEntity {
 
     private Boolean isActive = true;
 
-    @CreationTimestamp
-    private LocalDateTime createdAt;
+    @ManyToOne
+    private Event event;
 }

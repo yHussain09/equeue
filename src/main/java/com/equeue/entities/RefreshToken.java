@@ -9,9 +9,8 @@ import java.time.Instant;
 
 @Entity
 @Table(name = "refresh_token")
-@Getter
-@Setter
-public class RefreshTokenEntity extends BaseTenantEntity {
+@Getter @Setter
+public class RefreshToken extends BaseTenantEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

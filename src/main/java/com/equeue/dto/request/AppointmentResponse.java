@@ -20,8 +20,8 @@ public class AppointmentResponse {
     public static AppointmentResponse from(Appointment a) {
         return new AppointmentResponse(
                 a.getId(),
-                a.getEventId(),
-                a.getServiceId(),
+                a.getEvent(),
+                a.getServiceCatalog().getId(),
                 a.getQueueNumber(),
                 a.getStatus().name(),
                 a.getEstimatedWaitTime()

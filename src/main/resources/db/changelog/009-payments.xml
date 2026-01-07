@@ -1,24 +1,23 @@
 <changeSet id="009" author="yasir">
     <createTable tableName="payments">
+        <column name="organizer_id" type="BIGINT"/>
         <column name="id" type="BIGSERIAL">
             <constraints primaryKey="true"/>
         </column>
-
         <column name="appointment_id" type="BIGINT"/>
         <column name="amount" type="DECIMAL(10,2)"/>
         <column name="currency" type="VARCHAR(10)" defaultValue="PKR"/>
-
         <column name="method" type="VARCHAR(30)"/>
         <column name="provider" type="VARCHAR(50)"/>
-
         <column name="status" type="VARCHAR(30)"/>
         <column name="transaction_reference" type="VARCHAR(100)"/>
-
-        <column name="created_at" type="TIMESTAMP"
-                defaultValueComputed="CURRENT_TIMESTAMP"/>
         <column name="paid_at" type="TIMESTAMP"/>
+        <column name="created_at" type="TIMESTAMP" defaultValueComputed="CURRENT_TIMESTAMP"/>
+        <column name="created_by" type="VARCHAR(100)"/>
+        <column name="updated_at" type="TIMESTAMP"/>
+        <column name="updated_by" type="VARCHAR(100)"/>
+        <column name="version" type="BIGINT"/>
     </createTable>
-
     <addForeignKeyConstraint baseTableName="payments"
                              baseColumnNames="appointment_id"
                              referencedTableName="appointments"

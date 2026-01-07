@@ -19,7 +19,7 @@ public class AppointmentService extends BaseTenantEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "service_id")
-    private Service service;
+    private ServiceCatalog serviceCatalog;
 
     @Column(nullable = false)
     private String serviceNameSnapshot;

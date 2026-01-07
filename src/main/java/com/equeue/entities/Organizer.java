@@ -1,13 +1,11 @@
 package com.equeue.entities;
 
+import com.equeue.base.BaseAuditEntity;
 import jakarta.persistence.*;
-import org.hibernate.annotations.CreationTimestamp;
-
-import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "organizers")
-public class Organizer {
+@Table(name = "organizers") // Business / Company
+public class Organizer extends BaseAuditEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,6 +14,4 @@ public class Organizer {
     @Column(nullable = false, length = 150, unique = true)
     private String name;
 
-    @CreationTimestamp
-    private LocalDateTime createdAt;
 }

@@ -1,27 +1,24 @@
 <changeSet id="002" author="yasir">
     <createTable tableName="events">
+        <column name="organizer_id" type="BIGINT"/>
         <column name="id" type="BIGSERIAL">
             <constraints primaryKey="true"/>
         </column>
-
-        <column name="organizer_id" type="BIGINT"/>
         <column name="parent_event_id" type="BIGINT"/>
-
         <column name="name" type="VARCHAR(150)"/>
         <column name="type" type="VARCHAR(50)"/>
-
         <column name="registration_start" type="TIMESTAMP"/>
         <column name="registration_end" type="TIMESTAMP"/>
-
         <column name="start_date" type="DATE"/>
         <column name="end_date" type="DATE"/>
         <column name="start_time" type="TIME"/>
         <column name="end_time" type="TIME"/>
-
-        <column name="created_at" type="TIMESTAMP"
-                defaultValueComputed="CURRENT_TIMESTAMP"/>
+        <column name="created_at" type="TIMESTAMP" defaultValueComputed="CURRENT_TIMESTAMP"/>
+        <column name="created_by" type="VARCHAR(100)"/>
+        <column name="updated_at" type="TIMESTAMP"/>
+        <column name="updated_by" type="VARCHAR(100)"/>
+        <column name="version" type="BIGINT"/>
     </createTable>
-
     <addForeignKeyConstraint baseTableName="events"
                              baseColumnNames="organizer_id"
                              referencedTableName="organizers"

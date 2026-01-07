@@ -2,6 +2,7 @@ package com.equeue.enums;
 
 public enum AppointmentStatus {
     CREATED,
+    BOOKED,
     PAYMENT_PENDING,
     CONFIRMED,
     IN_QUEUE,

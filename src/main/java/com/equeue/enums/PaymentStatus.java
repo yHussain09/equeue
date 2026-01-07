@@ -1,5 +1,10 @@
 package com.equeue.enums;
 
 public enum PaymentStatus {
-    PENDING, PAID, FAILED, REFUNDED
+    INITIATED,
+    SUCCESS,
+    PENDING,
+    PAID,
+    FAILED,
+    REFUNDED
 }

@@ -2,7 +2,7 @@ package com.equeue.services;
 
 import com.equeue.entities.Event;
 import com.equeue.entities.Organizer;
-import com.equeue.entities.Service;
+import com.equeue.entities.ServiceCatalog;
 import com.equeue.repositories.ServiceRepository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,25 +18,25 @@ public class ServiceCatalogService {
     }
 
     @Transactional
-    public Service createService(
+    public ServiceCatalog createService(
             Organizer organizer,
             Event event,
             String name,
             BigDecimal price,
             int durationMinutes
     ) {
-        Service service = new Service();
-        service.setOrganizer(organizer);
-        service.setEvent(event);
-        service.setName(name);
-        service.setPrice(price);
-        service.setDurationMinutes(durationMinutes);
+        ServiceCatalog serviceCatalog = new ServiceCatalog();
+        serviceCatalog.setOrganizer(organizer);
+        serviceCatalog.setEvent(event);
+        serviceCatalog.setName(name);
+        serviceCatalog.setPrice(price);
+        serviceCatalog.setDurationMinutes(durationMinutes);
 
-        return serviceRepository.save(service);
+        return serviceRepository.save(serviceCatalog);
     }
 
     @Transactional(readOnly = true)
-    public List<Service> listServices(
+    public List<ServiceCatalog> listServices(
             Long organizerId,
             Long eventId
     ) {

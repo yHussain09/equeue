@@ -1,31 +1,29 @@
 <changeSet id="008" author="yasir">
     <createTable tableName="queue_entries">
+        <column name="organizer_id" type="BIGINT"/>
         <column name="id" type="BIGSERIAL">
             <constraints primaryKey="true"/>
         </column>
-
         <column name="queue_id" type="BIGINT"/>
         <column name="appointment_id" type="BIGINT"/>
-
         <column name="queue_number" type="INT"/>
         <column name="status" type="VARCHAR(20)"/>
-
-        <column name="created_at" type="TIMESTAMP"
-                defaultValueComputed="CURRENT_TIMESTAMP"/>
         <column name="started_at" type="TIMESTAMP"/>
         <column name="completed_at" type="TIMESTAMP"/>
+        <column name="created_at" type="TIMESTAMP" defaultValueComputed="CURRENT_TIMESTAMP"/>
+        <column name="created_by" type="VARCHAR(100)"/>
+        <column name="updated_at" type="TIMESTAMP"/>
+        <column name="updated_by" type="VARCHAR(100)"/>
+        <column name="version" type="BIGINT"/>
     </createTable>
-
     <addForeignKeyConstraint baseTableName="queue_entries"
                              baseColumnNames="queue_id"
                              referencedTableName="queues"
                              referencedColumnNames="id"/>
-
     <addForeignKeyConstraint baseTableName="queue_entries"
                              baseColumnNames="appointment_id"
                              referencedTableName="appointments"
                              referencedColumnNames="id"/>
-
     <createIndex indexName="idx_queue_active"
                  tableName="queue_entries">
         <column name="queue_id"/>
