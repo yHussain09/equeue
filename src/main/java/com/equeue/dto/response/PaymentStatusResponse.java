@@ -1,6 +1,6 @@
 package com.equeue.dto.response;
 
-import com.equeue.entities.Payment;
+import com.equeue.payment.entity.Payment;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

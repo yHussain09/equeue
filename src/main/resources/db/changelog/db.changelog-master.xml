@@ -5,14 +5,17 @@
         http://www.liquibase.org/xml/ns/dbchangelog
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
-    <include file="db/changelog/001-organizer.xml"/>
-    <include file="db/changelog/002-events.xml"/>
-    <include file="db/changelog/003-services.xml"/>
-    <include file="db/changelog/004-event-services.xml"/>
-    <include file="db/changelog/005-appointments.xml"/>
-    <include file="db/changelog/006-appointment-services.xml"/>
-    <include file="db/changelog/007-queues.xml"/>
-    <include file="db/changelog/008-queue-entries.xml"/>
-    <include file="db/changelog/009-payments.xml"/>
+    <include file="/db/changelog/security/001-create-organizer.xml"/>
+    <include file="/db/changelog/security/002-create-role.xml"/>
+    <include file="/db/changelog/security/003-create-user.xml"/>
+    <include file="/db/changelog/domain/004-create-organizer.xml"/>
+    <include file="/db/changelog/domain/004-create-event.xml"/>
+    <include file="/db/changelog/domain/003-create-service.xml"/>
+    <include file="/db/changelog/domain/004-event-services.xml"/>
+    <include file="/db/changelog/domain/005-appointments.xml"/>
+    <include file="/db/changelog/domain/006-appointment-services.xml"/>
+    <include file="/db/changelog/domain/007-queues.xml"/>
+    <include file="/db/changelog/domain/008-queue-entries.xml"/>
+    <include file="/db/changelog/domain/009-create-payments.xml"/>
 
 </databaseChangeLog>

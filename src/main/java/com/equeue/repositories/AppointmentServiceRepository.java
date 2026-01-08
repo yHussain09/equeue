@@ -1,6 +1,6 @@
 package com.equeue.repositories;
 
-import com.equeue.entities.AppointmentService;
+import com.equeue.appointment.entity.AppointmentService;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

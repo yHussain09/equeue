@@ -1,6 +1,6 @@
 package com.equeue.entities;
 
-import com.equeue.base.BaseTenantEntity;
+import com.equeue.common.entity.BaseTenantEntity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;

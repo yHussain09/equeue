@@ -1,6 +1,6 @@
 package com.equeue.interceptors;
 
-import com.equeue.security.JwtTokenProvider;
+import com.equeue.security.jwt.JwtTokenProvider;
 import org.springframework.http.server.ServerHttpRequest;
 import org.springframework.http.server.ServerHttpResponse;
 import org.springframework.http.server.ServletServerHttpRequest;

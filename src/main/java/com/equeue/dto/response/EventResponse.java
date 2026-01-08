@@ -1,6 +1,6 @@
 package com.equeue.dto.response;
 
-import com.equeue.entities.Event;
+import com.equeue.event.entity.Event;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

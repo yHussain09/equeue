@@ -1,7 +1,7 @@
 package com.equeue.services;
 
-import com.equeue.entities.Event;
-import com.equeue.repositories.EventRepository;
+import com.equeue.event.entity.Event;
+import com.equeue.event.repository.EventRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
